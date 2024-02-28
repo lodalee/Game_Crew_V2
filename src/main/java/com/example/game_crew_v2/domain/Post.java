@@ -1,5 +1,6 @@
 package com.example.game_crew_v2.domain;
 
+import com.example.game_crew_v2.domain.member.Member;
 import com.example.game_crew_v2.domain.type.GameType;
 import com.example.game_crew_v2.global.Auditing;
 import jakarta.persistence.*;
@@ -11,17 +12,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Post extends Auditing {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     private String title;
     private String content;
     private GameType gameType;
-
-    @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
 
     private int totalNumber; //모집 인원 수
     private int currentNumber = 0; //현재 인원 수

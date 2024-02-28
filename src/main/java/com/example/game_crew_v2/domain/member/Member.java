@@ -1,7 +1,6 @@
-package com.example.game_crew_v2.domain;
+package com.example.game_crew_v2.domain.member;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,22 +10,12 @@ import lombok.NoArgsConstructor;
 public class Member {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "total_rating_id")
-    private TotalRating totalRating;
-
-    @Column(unique = true)
-    @NotEmpty
     private String email;
-
-    @NotEmpty
     private String nickname;
-
-    @NotEmpty
     private String password;
     private String userImg;
 
