@@ -4,9 +4,10 @@ import org.springframework.http.HttpStatus;
 
 public class DuplicateException extends IllegalStateException {
     private HttpStatus httpStatus;
+    private String msg;
 
-    public DuplicateException(String msg) {
-        super(msg);
-        httpStatus = HttpStatus.CONFLICT;
+    public DuplicateException(String msg, HttpStatus httpStatus) {
+        this.msg = msg;
+        this.httpStatus = httpStatus;
     }
 }
