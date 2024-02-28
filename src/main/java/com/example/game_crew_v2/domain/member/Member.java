@@ -14,6 +14,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+
     private String email;
     private String nickname;
     private String password;
@@ -25,4 +26,6 @@ public class Member {
         this.password = password;
         this.userImg = userImg;
     }
+
+    //비즈니스 로직
 }
