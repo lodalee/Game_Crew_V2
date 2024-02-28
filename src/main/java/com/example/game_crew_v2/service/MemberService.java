@@ -1,9 +1,9 @@
 package com.example.game_crew_v2.service;
 
 import com.example.game_crew_v2.domain.member.Member;
-import com.example.game_crew_v2.domain.member.SignupRequestDto;
-import com.example.game_crew_v2.global.exception.DuplicateException;
-import com.example.game_crew_v2.global.message.ExceptionMessage;
+import com.example.game_crew_v2.domain.member.dto.SignupRequestDto;
+import com.example.game_crew_v2.exception.DuplicateException;
+import com.example.game_crew_v2.message.ExceptionMessage;
 import com.example.game_crew_v2.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

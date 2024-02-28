@@ -1,4 +1,4 @@
-package com.example.game_crew_v2.global.exception;
+package com.example.game_crew_v2.exception;
 
 import org.springframework.http.HttpStatus;
 

@@ -1,7 +1,7 @@
 package com.example.game_crew_v2.domain;
 
 import com.example.game_crew_v2.domain.member.Member;
-import com.example.game_crew_v2.global.Auditing;
+import com.example.game_crew_v2.Auditing;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

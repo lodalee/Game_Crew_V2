@@ -1,10 +1,10 @@
-package com.example.game_crew_v2.domain.member;
+package com.example.game_crew_v2.domain.member.dto;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class SignupRequestDto {
     @NotBlank
     @Column(unique = true)

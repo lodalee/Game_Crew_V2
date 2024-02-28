@@ -1,4 +1,4 @@
-package com.example.game_crew_v2.global;
+package com.example.game_crew_v2;
 
 import jakarta.persistence.*;
 import lombok.Getter;
