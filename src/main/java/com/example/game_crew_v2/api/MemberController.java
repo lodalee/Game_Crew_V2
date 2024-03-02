@@ -1,7 +1,6 @@
 package com.example.game_crew_v2.api;
 
 import com.example.game_crew_v2.domain.member.dto.SignupRequestDto;
-import com.example.game_crew_v2.message.MessageResponse;
 import com.example.game_crew_v2.message.SuccessMessage;
 import com.example.game_crew_v2.service.MemberService;
 import jakarta.validation.Valid;
@@ -22,8 +21,8 @@ public class MemberController {
     회원가입
      */
     @PostMapping("/join")
-    public MessageResponse signup (@RequestBody @Valid SignupRequestDto requestDto) {
+    public String signup (@RequestBody @Valid SignupRequestDto requestDto) {
         memberService.join(requestDto);
-        return new MessageResponse(SuccessMessage.SIGNUP_SUCCESSFUL);
+        return SuccessMessage.SIGNUP_SUCCESSFUL;
     }
 }
