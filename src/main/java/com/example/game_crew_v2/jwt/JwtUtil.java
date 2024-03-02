@@ -38,12 +38,12 @@ public class JwtUtil {
     }
 
     // 토큰 생성
-    public String creatToken(String email) {
+    public String creatToken(String username) {
         Date data = new Date();
 
         return BEARER_PREFIX +
                 Jwts.builder()
-                        .setSubject(email)
+                        .setSubject(username)
                         //.claim(AUTHORIZATION_KEY, role)
                         .setExpiration(new Date(data.getTime() + TOKEN_TIME))
                         //.setIssuedAt(data) 발급일
