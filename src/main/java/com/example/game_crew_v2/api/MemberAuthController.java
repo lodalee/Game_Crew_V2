@@ -1,7 +1,7 @@
 package com.example.game_crew_v2.api;
 
 import com.example.game_crew_v2.domain.member.dto.LoginRequestDto;
-import com.example.game_crew_v2.message.SuccessMessage;
+import com.example.game_crew_v2.domain.member.dto.LoginResponseDto;
 import com.example.game_crew_v2.service.MemberService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -22,9 +22,8 @@ public class MemberAuthController {
     로그인
      */
     @PostMapping("/member/login")
-    public String login(@RequestBody @Valid LoginRequestDto requestDto, HttpServletResponse response) {
+    public LoginResponseDto login(@RequestBody @Valid LoginRequestDto requestDto, HttpServletResponse response) {
 
-        memberService.login(requestDto, response);
-        return SuccessMessage.LOGIN_SUCCESSFUL;
+        return memberService.login(requestDto, response);
     }
 }
